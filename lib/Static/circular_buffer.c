@@ -40,16 +40,19 @@ struct circularBuffer{
 static int instanceNumber = 0;
 static circularBuffer_t circularBufferPool[CB_MAX_INSTANCE_POOL_SIZE];
 
-/* Private Function Declerations */
+/* Private Function Declarations */
 static circularBuffer_t *circular_buffer_find_unused_instance(void);
 
 /* Private Function Definitions */
 static circularBuffer_t *circular_buffer_find_unused_instance(void)
 {
-    for (int i = 0; i < CB_MAX_INSTANCE_POOL_SIZE; i++){
+    int i = 0;
+    for (i = 0; i < CB_MAX_INSTANCE_POOL_SIZE; i++){
         if (circularBufferPool[i].inUse == false)
             return &circularBufferPool[i];
     }
+
+    return NULL;
 }
 
 /* Creates and inits new circular buffer object */
