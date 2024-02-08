@@ -137,3 +137,9 @@ int circular_buffer_capacity(const circularBuffer_t *const circularBuffer)
 {
     return circularBuffer->capacity;
 }
+
+void circular_buffer_flush(circularBuffer_t *const circularBuffer)
+{
+    circularBuffer->head = 0;
+    circularBuffer->tail = 0;
+}

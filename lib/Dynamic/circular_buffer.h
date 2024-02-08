@@ -46,6 +46,9 @@ int circular_buffer_free_space(const circularBuffer_t *const circularBuffer);
 /* Gets the capacity of circular buffer */
 int circular_buffer_capacity(const circularBuffer_t *const circularBuffer);
 
+/* flushes circular buffer */
+void circular_buffer_flush(circularBuffer_t *const circularBuffer);
+
 #ifdef __cplusplus
 }
 #endif
